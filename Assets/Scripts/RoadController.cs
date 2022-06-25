@@ -4,8 +4,8 @@ public class RoadController : MonoBehaviour
 {
     public int cost = 10;
 
-    public GameObject road;
-    public GameObject mud;
+    public Sprite road;
+    public Sprite mud;
 
     public bool unlockedRoad;
 
@@ -20,8 +20,7 @@ public class RoadController : MonoBehaviour
     {
         unlockedRoad = false;
 
-        road.SetActive(false);
-        mud.SetActive(true);
+        ChangeAllSpriteChilds(mud);
     }
 
     public void UnlockRoad()
@@ -30,7 +29,14 @@ public class RoadController : MonoBehaviour
 
         unlockedRoad = true;
 
-        road.SetActive(true);
-        mud.SetActive(false);
+        ChangeAllSpriteChilds(road);
+    }
+
+    public void ChangeAllSpriteChilds(Sprite newSprite)
+    {
+        foreach (var spriteRenderer in transform.GetComponentsInChildren<SpriteRenderer>())
+        {
+            spriteRenderer.sprite = newSprite;
+        }
     }
 }
