@@ -7,6 +7,8 @@ public class AgentIA : MonoBehaviour
 {
     public EnumObjectType type;
 
+    public int money;
+
     public GameObject Points;
     public float speed;
 
@@ -82,6 +84,7 @@ public class AgentIA : MonoBehaviour
 
             if (index == Points.transform.childCount)
             {
+                GameManager.s_instance.IncMoney(money);
                 Destroy(gameObject);
                 return;
             }

@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         if (OnChangeMoney != null)
             OnChangeMoney(currentMoney);
 
-        if (OnChangeMoney != null)
+        if (OnIncMoney != null)
             OnIncMoney(value);
     }
 
