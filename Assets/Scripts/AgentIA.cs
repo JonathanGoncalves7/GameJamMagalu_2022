@@ -43,9 +43,12 @@ public class AgentIA : MonoBehaviour
 
         foreach (RaycastHit2D item in hits)
         {
-            if (item.transform.CompareTag("Crosswalk"))
+            IWalkable walkable;
+            item.transform.TryGetComponent<IWalkable>(out walkable);
+
+            if (walkable != null)
             {
-                if (item.transform.GetComponent<Crosswalk>().curentType != type)
+                if (!walkable.CanWalk(gameObject, type))
                     return false;
             }
             else

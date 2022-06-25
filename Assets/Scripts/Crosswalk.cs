@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crosswalk : MonoBehaviour
+public class Crosswalk : MonoBehaviour, IWalkable
 {
     public EnumObjectType curentType = EnumObjectType.Human;
 
@@ -34,12 +34,14 @@ public class Crosswalk : MonoBehaviour
             case EnumObjectType.Car:
                 curentType = EnumObjectType.Human;
                 break;
-
             default:
                 curentType = EnumObjectType.Car;
                 break;
         }
+    }
 
-
+    public bool CanWalk(GameObject _gameObject, EnumObjectType _type)
+    {
+        return _type == curentType;
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8496792516737923425}
   - component: {fileID: 8496792516737923426}
   - component: {fileID: 8496792516737923427}
+  - component: {fileID: 7427378817690251146}
   m_Layer: 0
   m_Name: RoadSprite
   m_TagString: Untagged
@@ -120,5 +121,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 512bf5bc745a1ca46bff79c76491bb7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7427378817690251146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496792516737923454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cc4d2add31af0419146cc1b02b9f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
