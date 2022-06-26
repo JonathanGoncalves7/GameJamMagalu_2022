@@ -24,6 +24,6 @@ public class RoadChildClick : MonoBehaviour
     void Update()
     {
         if (mouseOver && Input.GetMouseButtonDown(0))
-            GetComponentInParent<RoadController>().UnlockRoad();
+            GetComponentInParent<RoadController>().UnlockRoad(gameObject);
     }
 }

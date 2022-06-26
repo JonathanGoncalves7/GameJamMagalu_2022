@@ -11,5 +11,5 @@ public class ObjectType : MonoBehaviour
 public enum EnumObjectType
 {
     Car,
-    Human
+    Person
 }

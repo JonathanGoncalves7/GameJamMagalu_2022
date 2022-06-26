@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crosswalk : MonoBehaviour, IWalkable
 {
-    public EnumObjectType curentType = EnumObjectType.Human;
+    public EnumObjectType curentType = EnumObjectType.Person;
 
     public float timeToEachType = 3f;
 
@@ -32,7 +32,7 @@ public class Crosswalk : MonoBehaviour, IWalkable
         switch (curentType)
         {
             case EnumObjectType.Car:
-                curentType = EnumObjectType.Human;
+                curentType = EnumObjectType.Person;
                 break;
             default:
                 curentType = EnumObjectType.Car;

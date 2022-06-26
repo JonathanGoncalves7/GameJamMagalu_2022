@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RoadController : MonoBehaviour
@@ -7,7 +8,10 @@ public class RoadController : MonoBehaviour
     public Sprite road;
     public Sprite mud;
 
-    public bool unlockedRoad;
+    public List<GameObject> road1;
+    public List<GameObject> road2;
+    public List<GameObject> road3;
+    public List<GameObject> road4;
 
     private bool mouseOver;
 
@@ -18,25 +22,55 @@ public class RoadController : MonoBehaviour
 
     private void LockRoad()
     {
-        unlockedRoad = false;
-
-        ChangeAllSpriteChilds(mud);
+        // ChangeAllSpriteChilds(mud);
     }
 
-    public void UnlockRoad()
+    public void UnlockRoad(GameObject _gameObject)
     {
         GameManager.s_instance.DecMoney(cost);
 
-        unlockedRoad = true;
+        foreach (var item in road1)
+        {
+            if (item == _gameObject)
+            {
+                ChangeAllSpriteChilds(road1, road);
+                return;
+            }
+        }
 
-        ChangeAllSpriteChilds(road);
+        foreach (var item in road2)
+        {
+            if (item == _gameObject)
+            {
+                ChangeAllSpriteChilds(road2, road);
+                return;
+            }
+        }
+
+        foreach (var item in road3)
+        {
+            if (item == _gameObject)
+            {
+                ChangeAllSpriteChilds(road3, road);
+                return;
+            }
+        }
+
+        foreach (var item in road4)
+        {
+            if (item == _gameObject)
+            {
+                ChangeAllSpriteChilds(road4, road);
+                return;
+            }
+        }
     }
 
-    public void ChangeAllSpriteChilds(Sprite newSprite)
+    public void ChangeAllSpriteChilds(List<GameObject> roadList, Sprite newSprite)
     {
-        foreach (var spriteRenderer in transform.GetComponentsInChildren<SpriteRenderer>())
+        foreach (var road in roadList)
         {
-            spriteRenderer.sprite = newSprite;
+            road.GetComponent<RoadSprite>().Unlock(newSprite);
         }
     }
 }

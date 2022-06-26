@@ -10,7 +10,8 @@ public class AgentIA : MonoBehaviour
     public int money;
 
     public GameObject Points;
-    public float speed;
+    public float speedMin;
+    public float speedMax;
 
     public float rayCastDistance = .5f;
 
@@ -19,9 +20,13 @@ public class AgentIA : MonoBehaviour
 
     private BoxCollider2D _boxCollider;
 
+    private float speedSelected;
+
     private void Start()
     {
         _boxCollider = GetComponent<BoxCollider2D>();
+
+        speedSelected = UnityEngine.Random.Range(speedMin, speedMax);
 
         pointsList.Clear();
         for (var i = 0; i < Points.transform.childCount; i++)
@@ -63,7 +68,7 @@ public class AgentIA : MonoBehaviour
                             return false;
                         }
                         break;
-                    case EnumObjectType.Human:
+                    case EnumObjectType.Person:
                         if (item.transform.CompareTag("Car"))
                         {
                             return false;
@@ -90,7 +95,7 @@ public class AgentIA : MonoBehaviour
             }
         }
 
-        transform.Translate(GetDirection() * speed * Time.deltaTime);
+        transform.Translate(GetDirection() * speedSelected * Time.deltaTime);
     }
 
     private Vector3 GetDirection()

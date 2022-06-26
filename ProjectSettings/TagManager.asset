@@ -45,3 +45,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 1453275293
+    locked: 0
+  - name: Road
+    uniqueID: 1372137031
+    locked: 0
+  - name: Bikelane
+    uniqueID: 2582223347
+    locked: 0
+  - name: Sidewalk
+    uniqueID: 3189589985
+    locked: 0
+  - name: Crosswalk
+    uniqueID: 4085917887
+    locked: 0
+  - name: Shop
+    uniqueID: 2461684219
+    locked: 0
+  - name: Car
+    uniqueID: 2606056637
+    locked: 0
+  - name: Person
+    uniqueID: 4245192773
+    locked: 0
